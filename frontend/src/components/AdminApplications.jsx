@@ -4,7 +4,7 @@ export default function AdminApplication() {
   const [applications, setApplications] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/applications")
+    fetch("https://api.britishirishsocialworkagency.co.uk/api/applications")
       .then(res => res.json())
       .then(data => setApplications(data))
       .catch(err => console.error(err));

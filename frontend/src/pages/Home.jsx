@@ -11,7 +11,7 @@ export default function Home() {
 
   // Fetch jobs from API
   useEffect(() => {
-    fetch("http://localhost:5000/api/jobs")
+    fetch("https://api.britishirishsocialworkagency.co.uk/api/jobs")
       .then(res => res.json())
       .then(data => {
         setJobs(data);

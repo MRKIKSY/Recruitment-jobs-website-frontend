@@ -17,7 +17,7 @@ export default function AdminDashboard() {
 
   const fetchJobs = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/jobs");
+      const res = await fetch("https://api.britishirishsocialworkagency.co.uk/api/jobs");
       const data = await res.json();
       setJobs(data);
     } catch (err) {

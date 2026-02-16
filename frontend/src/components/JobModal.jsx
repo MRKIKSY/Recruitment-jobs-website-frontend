@@ -34,7 +34,7 @@ export default function JobModal({ job, onClose }) {
     setSubmitting(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/applications", {
+      const res = await fetch("https://api.britishirishsocialworkagency.co.uk/api/applications", {
         method: "POST",
         body: data,
       });
