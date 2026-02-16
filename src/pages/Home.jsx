@@ -10,15 +10,22 @@ export default function Home() {
   const [selectedJob, setSelectedJob] = useState(null);
 
   // Fetch jobs from API
-  useEffect(() => {
-    fetch("https://api.britishirishsocialworkagency.co.uk/api/jobs")
-      .then(res => res.json())
-      .then(data => {
-        setJobs(data);
-        setFilteredJobs(data);
-      })
-      .catch(err => console.error("Failed to fetch jobs:", err));
-  }, []);
+ useEffect(() => {
+  fetch("https://api.britishirishsocialworkagency.co.uk/api/jobs")
+    .then(async res => {
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`HTTP ${res.status}: ${text}`);
+      }
+      return res.json();
+    })
+    .then(data => {
+      setJobs(data);
+      setFilteredJobs(data);
+    })
+    .catch(err => console.error("Failed to fetch jobs:", err));
+}, []);
+
 
   // Filter jobs based on search term (debounced)
   useEffect(() => {
