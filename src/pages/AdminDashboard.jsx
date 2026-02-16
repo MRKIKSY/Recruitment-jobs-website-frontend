@@ -27,7 +27,7 @@ export default function AdminDashboard() {
 
   const fetchApplications = async () => {
     try {
-      const res = await fetch("https://api.britishirishsocialworkagency.co.uk/api/applications");
+      const res = await fetch("http://localhost:5000/api/applications");
       const data = await res.json();
       setApplications(data);
     } catch (err) {
@@ -49,14 +49,14 @@ export default function AdminDashboard() {
 
     try {
       if (editingJobId) {
-        await fetch(`https://api.britishirishsocialworkagency.co.uk/api/jobs/${editingJobId}`, {
+        await fetch(`http://localhost:5000/api/jobs/${editingJobId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),
         });
         setEditingJobId(null);
       } else {
-        await fetch("https://api.britishirishsocialworkagency.co.uk/api/jobs", {
+        await fetch("http://localhost:5000/api/jobs", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),
@@ -78,7 +78,7 @@ export default function AdminDashboard() {
     if (!window.confirm("Are you sure you want to delete this job?")) return;
 
     try {
-      await fetch(`https://api.britishirishsocialworkagency.co.uk/api/jobs/${id}`, {
+      await fetch(`http://localhost:5000/api/jobs/${id}`, {
         method: "DELETE",
       });
       fetchJobs();
@@ -216,7 +216,7 @@ export default function AdminDashboard() {
               <p><strong>Experience:</strong> {app.applicantExperience}</p>
 
               <a
-                href={`https://api.britishirishsocialworkagency.co.uk/uploads/${app.cvFile}`}
+                href={`http://localhost:5000/uploads/${app.cvFile}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
