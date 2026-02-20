@@ -69,10 +69,10 @@ export default function Header() {
             info@britishirishsocialworkagency.co.uk
           </a>
         </div>
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <FaPhone className="text-white" />
           <span>+44 123 456 7890</span>
-        </div>
+        </div> */}
       </div>
       {/* Main header with logo and navigation */}
       <div className="flex flex-col md:flex-row justify-between items-center px-4 py-3 md:py-4">
