@@ -21,7 +21,7 @@ export default function Footer() {
             </a>
           </p>
           <p className="mt-1 flex items-center gap-2 text-gray-300">
-            <span>Phone:</span> +44 123 456 7890
+            <span>Phone:</span> +44 20 45 745 575
           </p>
         </div>
 
